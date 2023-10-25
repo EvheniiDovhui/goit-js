@@ -33,22 +33,22 @@
 // console.log(removeWord("Привіт світ світ світ Привіт Привіт світ світ"));
 
 // function removeConsecutiveDuplicates(inputString) {
-//   const words = inputString.split(" "); // Розбиваємо рядок на масив слів
+//   const words = inputString.split(" ");
 //   const result = [];
 
 //   for (let i = 0; i < words.length; i++) {
 //     if (words[i] !== words[i + 1]) {
-//       // Якщо поточне слово не дорівнює наступному слову
-//       result.push(words[i]); // Додаємо поточне слово до результату
+//
+//       result.push(words[i]);
 //     }
 //   }
 
-//   return result.join(" "); // З'єднуємо слова назад у рядок і повертаємо результат
+//   return result.join(" ");
 // }
 
 // const inputString = "Привіт світ світ світ Привіт Привіт світ світ";
 // const result = removeConsecutiveDuplicates(inputString);
-// console.log(result); // Виведе "Привіт світ Привіт світ"
+// console.log(result);
 // знайти суму элементів
 // function sumObject(obj) {
 //   let total = 0;
