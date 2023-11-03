@@ -157,63 +157,63 @@
 // list.append(li);
 // console.log(listStatic);
 // console.log(listDynamics);
-const cars = [
-  {
-    model: "Honda",
-    type: "Civic",
-    prise: 12000,
-    img: "https://upload.wikimedia.org/wikipedia/commons/2/23/2022_Honda_Civic_LX_Sedan%2C_front_right%2C_11-02-2022.jpg",
-  },
-  {
-    model: "Audi",
-    type: "Q7",
-    prise: 40000,
-    img: "https://auto-dvig.com/wp-content/uploads/2022/06/img_7273.webp",
-  },
-  {
-    model: "BMW",
-    type: "5 siries",
-    prise: 9000,
-    img: "https://upload.wikimedia.org/wikipedia/commons/5/52/BMW_G30_FL_IMG_5351.jpg",
-  },
-  {
-    model: "Honda",
-    type: "Accord",
-    prise: 20000,
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2018_Honda_Accord_12.17.17.jpg/800px-2018_Honda_Accord_12.17.17.jpg",
-  },
-  {
-    model: "Volvo",
-    type: "XC60",
-    prise: 7000,
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/2018_Volvo_XC60_R-Design_D5_P-Pulse_2.0_Front.jpg/1200px-2018_Volvo_XC60_R-Design_D5_P-Pulse_2.0_Front.jpg",
-  },
-  {
-    id: 4,
-    model: "Honda",
-    type: "Accord",
-    prise: 20000,
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2018_Honda_Accord_12.17.17.jpg/800px-2018_Honda_Accord_12.17.17.jpg",
-  },
-];
-const container = document.querySelector(".js-container");
-const markup = cars
-  .map(
-    ({ id = "none", model, type, prise, img }) => `<li data-id="${id}">
-        <img src="${img}" alt="${model}" class="img">
-        <h2>Марка - ${model}</h2>
-        <h3>Модель - ${type}</h3>
-        <p>Ціна - ${prise}</p>
-      </li>`
-  )
-  .join("");
-container.insertAdjacentHTML("beforeend", markup);
-// console.dir(markup);
-const containerAfter = document.querySelector(".js-container");
-// console.dir(containerAfter);
-[...containerAfter.children].forEach((item) => {
-  if (item.dataset.id !== "none") {
-    item.remove();
-  }
-});
+// const cars = [
+//   {
+//     model: "Honda",
+//     type: "Civic",
+//     prise: 12000,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/2/23/2022_Honda_Civic_LX_Sedan%2C_front_right%2C_11-02-2022.jpg",
+//   },
+//   {
+//     model: "Audi",
+//     type: "Q7",
+//     prise: 40000,
+//     img: "https://auto-dvig.com/wp-content/uploads/2022/06/img_7273.webp",
+//   },
+//   {
+//     model: "BMW",
+//     type: "5 siries",
+//     prise: 9000,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/5/52/BMW_G30_FL_IMG_5351.jpg",
+//   },
+//   {
+//     model: "Honda",
+//     type: "Accord",
+//     prise: 20000,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2018_Honda_Accord_12.17.17.jpg/800px-2018_Honda_Accord_12.17.17.jpg",
+//   },
+//   {
+//     model: "Volvo",
+//     type: "XC60",
+//     prise: 7000,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/2018_Volvo_XC60_R-Design_D5_P-Pulse_2.0_Front.jpg/1200px-2018_Volvo_XC60_R-Design_D5_P-Pulse_2.0_Front.jpg",
+//   },
+//   {
+//     id: 4,
+//     model: "Honda",
+//     type: "Accord",
+//     prise: 20000,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2018_Honda_Accord_12.17.17.jpg/800px-2018_Honda_Accord_12.17.17.jpg",
+//   },
+// ];
+// const container = document.querySelector(".js-container");
+// const markup = cars
+//   .map(
+//     ({ id = "none", model, type, prise, img }) => `<li data-id="${id}">
+//         <img src="${img}" alt="${model}" class="img">
+//         <h2>Марка - ${model}</h2>
+//         <h3>Модель - ${type}</h3>
+//         <p>Ціна - ${prise}</p>
+//       </li>`
+//   )
+//   .join("");
+// container.insertAdjacentHTML("beforeend", markup);
+// // console.dir(markup);
+// const containerAfter = document.querySelector(".js-container");
+// // console.dir(containerAfter);
+// [...containerAfter.children].forEach((item) => {
+//   if (item.dataset.id !== "none") {
+//     item.remove();
+//   }
+// });
 // containerAfter.innerHTML = "";
