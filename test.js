@@ -217,3 +217,29 @@
 //   }
 // });
 // containerAfter.innerHTML = "";
+// console.log("hello");
+// const button = document.querySelector(".js-click");
+// const container = document.querySelector(".js-container");
+// button.addEventListener("click", onclick);
+// let step = 0;
+// function onclick(evt) {
+//   step += 5;
+//   container.style.marginLeft = `${step}px`;
+//   container.style.marginTop = `${step}px`;
+//   console.log(evt.currentTarget);
+// }
+// console.dir(button);
+const title = document.querySelector(".js-title");
+
+title.addEventListener("click", onclick);
+
+function onClick(evt) {
+  console.log(evt.currentTarget);
+  const str = title.textContent.slice(0, 13);
+  const remainder = title.textContent.slice(13);
+  console.log(remainder);
+}
+
+// const str = title.textContent.slice(0, 13);
+// const remainder = title.textContent.slice(13);
+// console.log(remainder);
