@@ -267,18 +267,36 @@
 //   console.dir(evt.currentTarget.value);
 // }
 
-const formEl = document.querySelector(".js-form");
-formEl.addEventListener("submit", onSubmit);
-function onSubmit(evt) {
-  evt.preventDefault();
-  const { userName, userEmail, userAge } = evt.currentTarget.elements;
-  // console.log(userName.value);
-  // console.log(userEmail.value);
-  // console.log(userAge.value);
-  const data = {
-    name: userName.value,
-    email: userEmail.value,
-    age: userAge.value,
-  };
-  console.log(data);
+// const formEl = document.querySelector(".js-form");
+// formEl.addEventListener("submit", onSubmit);
+// function onSubmit(evt) {
+//   evt.preventDefault();
+//   const { userName, userEmail, userAge } = evt.currentTarget.elements;
+//   // console.log(userName.value);
+//   // console.log(userEmail.value);
+//   // console.log(userAge.value);
+//   const data = {
+//     name: userName.value,
+//     email: userEmail.value,
+//     age: userAge.value,
+//   };
+//   console.log(data);
+// }
+
+const container = document.querySelector(".js-container");
+document.addEventListener("keydown", onKey);
+// document.addEventListener("keyup", onKey);
+// document.addEventListener("keypress", onKey);
+
+function onKey(evt) {
+  console.log(evt);
+  // if (evt.code === "Escape" || evt.code === "Enter") {
+  //   container.classList.toggle("tog");
+  // }
+  // console.log(evt);
+
+  if (evt.ctrlKey && evt.code === "KeyC") {
+    alert("Copy?");
+    return;
+  }
 }
