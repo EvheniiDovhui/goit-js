@@ -229,17 +229,56 @@
 //   console.log(evt.currentTarget);
 // }
 // console.dir(button);
-const title = document.querySelector(".js-title");
+// const title = document.querySelector(".js-title");
+// const title1 = document.querySelector(".js-title1");
+// const title2 = document.querySelector(".js-title2");
 
-title.addEventListener("click", onclick);
+// const maxLength = 13;
+// const totalLength = maxLength + 3;
+// let remainder = "";
+// title.addEventListener("click", onClick);
+// title1.addEventListener("click", onClick);
+// title2.addEventListener("click", onClick);
 
-function onClick(evt) {
-  console.log(evt.currentTarget);
-  const str = title.textContent.slice(0, 13);
-  const remainder = title.textContent.slice(13);
-  console.log(remainder);
-}
+// function onClick(evt) {
+//   const title = evt.currentTarget;
+//   const str = title.textContent.slice(0, maxLength);
 
+//   if (title.textContent.length > totalLength) {
+//     let remainder = title.textContent.slice(maxLength);
+//     title.setAttribute("data-title", remainder);
+//     title.textContent = str + "...";
+//   } else {
+//     let remainder = title.dataset.title;
+//     title.textContent = str + remainder;
+//   }
+
+//   console.log(remainder);
+// }
 // const str = title.textContent.slice(0, 13);
 // const remainder = title.textContent.slice(13);
 // console.log(remainder);
+
+// const userName = document.querySelector(".js-input");
+// userName.addEventListener("change", onInput);
+// // userName.addEventListener("input", onInput);
+
+// function onInput(evt) {
+//   console.dir(evt.currentTarget.value);
+// }
+
+const formEl = document.querySelector(".js-form");
+formEl.addEventListener("submit", onSubmit);
+function onSubmit(evt) {
+  evt.preventDefault();
+  const { userName, userEmail, userAge } = evt.currentTarget.elements;
+  // console.log(userName.value);
+  // console.log(userEmail.value);
+  // console.log(userAge.value);
+  const data = {
+    name: userName.value,
+    email: userEmail.value,
+    age: userAge.value,
+  };
+  console.log(data);
+}
