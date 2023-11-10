@@ -283,20 +283,75 @@
 //   console.log(data);
 // }
 
-const container = document.querySelector(".js-container");
-document.addEventListener("keydown", onKey);
-// document.addEventListener("keyup", onKey);
-// document.addEventListener("keypress", onKey);
+// const container = document.querySelector(".js-container");
+// document.addEventListener("keydown", onKey);
+// // document.addEventListener("keyup", onKey);
+// // document.addEventListener("keypress", onKey);
 
-function onKey(evt) {
-  console.log(evt);
-  // if (evt.code === "Escape" || evt.code === "Enter") {
-  //   container.classList.toggle("tog");
-  // }
-  // console.log(evt);
+// function onKey(evt) {
+//   console.log(evt);
+//   // if (evt.code === "Escape" || evt.code === "Enter") {
+//   //   container.classList.toggle("tog");
+//   // }
+//   // console.log(evt);
 
-  if (evt.ctrlKey && evt.code === "KeyC") {
-    alert("Copy?");
-    return;
-  }
-}
+//   if (evt.ctrlKey && evt.code === "KeyC") {
+//     // evt.preventDefault(); // блок копіювання
+//     alert("Copy?");
+//     return;
+//   }
+// }
+
+const cars = [
+  {
+    id: 1,
+    model: "Honda",
+    type: "Civic",
+    prise: 12000,
+    img: "https://upload.wikimedia.org/wikipedia/commons/2/23/2022_Honda_Civic_LX_Sedan%2C_front_right%2C_11-02-2022.jpg",
+  },
+  {
+    id: 2,
+    model: "Audi",
+    type: "Q7",
+    prise: 40000,
+    img: "https://auto-dvig.com/wp-content/uploads/2022/06/img_7273.webp",
+  },
+  {
+    id: 3,
+    model: "BMW",
+    type: "5 siries",
+    prise: 9000,
+    img: "https://upload.wikimedia.org/wikipedia/commons/5/52/BMW_G30_FL_IMG_5351.jpg",
+  },
+  {
+    id: 4,
+    model: "Honda",
+    type: "Accord",
+    prise: 20000,
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2018_Honda_Accord_12.17.17.jpg/800px-2018_Honda_Accord_12.17.17.jpg",
+  },
+  {
+    id: 5,
+    model: "Volvo",
+    type: "XC60",
+    prise: 7000,
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/2018_Volvo_XC60_R-Design_D5_P-Pulse_2.0_Front.jpg/1200px-2018_Volvo_XC60_R-Design_D5_P-Pulse_2.0_Front.jpg",
+  },
+];
+
+const list = document.querySelector(".js-list");
+
+const markup = cars
+  .map(
+    ({ id, model, type, prise, img }) => `
+      <li data-id="${id}">
+        <img src="${img}" alt="${model}" width="300px"/>
+        <h2>${model}</h2>
+        <h3>${type}</h3>
+        <p>${prise}</p>
+      </li>`
+  )
+  .join("");
+list.insertAdjacentHTML("beforeend", markup);
+console.log(markup);
