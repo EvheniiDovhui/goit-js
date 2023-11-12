@@ -7,12 +7,58 @@ ul {
 .img {
   width: 300px;
 }
-.container {
+/* .container {
   width: 200px;
   height: 200px;
-  background-color: rgb(91, 80, 248);
+  background-color: rgb(170, 170, 177);
   border-radius: 50%;
-}
+} */
 .tog {
   display: none;
+}
+.favorite {
+  color: rgb(154, 154, 163);
+  text-align: center;
+  width: 18px;
+}
+.favorite-active {
+  color: aqua;
+}
+.widget {
+  text-align: center;
+}
+
+.widget p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 48px;
+}
+
+.widget span {
+  font-family: monospace;
+}
+
+.widget button {
+  padding: 8px 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.container {
+  width: 300px;
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 50px;
+}
+.box {
+  width: 50px;
+  height: 50px;
+}
+.item-red {
+  background-color: rgb(107, 8, 8);
+}
+.item-green {
+  background-color: rgb(71, 204, 71);
+}
+.item-black {
+  background-color: rgb(26, 25, 25);
 }

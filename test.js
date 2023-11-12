@@ -302,56 +302,141 @@
 //   }
 // }
 
-const cars = [
-  {
-    id: 1,
-    model: "Honda",
-    type: "Civic",
-    prise: 12000,
-    img: "https://upload.wikimedia.org/wikipedia/commons/2/23/2022_Honda_Civic_LX_Sedan%2C_front_right%2C_11-02-2022.jpg",
-  },
-  {
-    id: 2,
-    model: "Audi",
-    type: "Q7",
-    prise: 40000,
-    img: "https://auto-dvig.com/wp-content/uploads/2022/06/img_7273.webp",
-  },
-  {
-    id: 3,
-    model: "BMW",
-    type: "5 siries",
-    prise: 9000,
-    img: "https://upload.wikimedia.org/wikipedia/commons/5/52/BMW_G30_FL_IMG_5351.jpg",
-  },
-  {
-    id: 4,
-    model: "Honda",
-    type: "Accord",
-    prise: 20000,
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2018_Honda_Accord_12.17.17.jpg/800px-2018_Honda_Accord_12.17.17.jpg",
-  },
-  {
-    id: 5,
-    model: "Volvo",
-    type: "XC60",
-    prise: 7000,
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/2018_Volvo_XC60_R-Design_D5_P-Pulse_2.0_Front.jpg/1200px-2018_Volvo_XC60_R-Design_D5_P-Pulse_2.0_Front.jpg",
-  },
-];
+// const cars = [
+//   {
+//     id: 1,
+//     car: "Honda",
+//     type: "Civic",
+//     prise: 12000,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/2/23/2022_Honda_Civic_LX_Sedan%2C_front_right%2C_11-02-2022.jpg",
+//   },
+//   {
+//     id: 2,
+//     car: "Audi",
+//     type: "Q7",
+//     prise: 40000,
+//     img: "https://auto-dvig.com/wp-content/uploads/2022/06/img_7273.webp",
+//   },
+//   {
+//     id: 3,
+//     car: "BMW",
+//     type: "5 siries",
+//     prise: 9000,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/5/52/BMW_G30_FL_IMG_5351.jpg",
+//   },
+//   {
+//     id: 4,
+//     car: "Honda",
+//     type: "Accord",
+//     prise: 20000,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2018_Honda_Accord_12.17.17.jpg/800px-2018_Honda_Accord_12.17.17.jpg",
+//   },
+//   {
+//     id: 5,
+//     car: "Volvo",
+//     type: "XC60",
+//     prise: 7000,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/2018_Volvo_XC60_R-Design_D5_P-Pulse_2.0_Front.jpg/1200px-2018_Volvo_XC60_R-Design_D5_P-Pulse_2.0_Front.jpg",
+//   },
+// ];
 
-const list = document.querySelector(".js-list");
+// const list = document.querySelector(".js-list");
+// const favoriteList = document.querySelector(".js-favorite-list");
+// const form = document.querySelector(".js-search-form");
+// form.addEventListener("submit", onSearch);
+// list.addEventListener("click", onClick);
+// function createMarkup(arr) {
+//   return arr
+//     .map(
+//       ({ id, car, type, prise, img }) => `
+//       <li data-id="${id}">
+//         <img src="${img}" alt="${car}" width="300px"/>
+//         <div class="js-favorite favorite">♥</div>
+//         <h2>${car}</h2>
+//         <h3>${type}</h3>
+//         <p>${prise}</p>
+//       </li>`
+//     )
+//     .join("");
+// }
 
-const markup = cars
-  .map(
-    ({ id, model, type, prise, img }) => `
-      <li data-id="${id}">
-        <img src="${img}" alt="${model}" width="300px"/>
-        <h2>${model}</h2>
-        <h3>${type}</h3>
-        <p>${prise}</p>
-      </li>`
-  )
-  .join("");
-list.insertAdjacentHTML("beforeend", markup);
-console.log(markup);
+// list.insertAdjacentHTML("beforeend", createMarkup(cars));
+// // console.log(markup);
+
+// function onSearch(evt) {
+//   evt.preventDefault();
+//   const form = evt.currentTarget;
+//   const { query, select } = form.elements;
+//   const searchCars = cars.filter(
+//     (item) =>
+//       item[select.value].toLowerCase() === query.value.trim().toLowerCase()
+//   );
+//   list.innerHTML = createMarkup(searchCars);
+//   console.log(searchCars);
+//   // console.dir(query.value);
+//   // console.dir(select.value);
+// }
+
+// function onClick(evt) {
+//   // console.log(evt.currentTarget);
+//   // console.log(evt.target);
+//   if (evt.target.classList.contains("js-favorite")) {
+//     evt.target.classList.add("favorite-active");
+//     // console.log(evt.target);
+//     const { id } = evt.target.closest("li").dataset;
+//     // console.log(id);
+
+//     const { car, type } = cars.find(({ id: carId }) => carId === Number(id));
+//     addFavorite(`${car} ${type}`);
+//     // console.log(currentCar);
+//   }
+// }
+// function addFavorite(currentCar) {
+//   favoriteList.insertAdjacentHTML("beforeend", `<li>${currentCar}</li >`);
+// }
+
+// const list = document.querySelector("#categories");
+// [...list.children].forEach((item) => {
+//   console.log(item.firstElementChild);
+//   console.log(item.lastElementChild);
+// });
+
+// const allCategories = document.getElementById("categories").children.length;
+// console.log(`Number of categories: ${allCategories}`);
+
+// const titlesCategories = document.querySelectorAll("h2");
+// titlesCategories.forEach((title) => {
+//   console.log("Category:", title.textContent);
+//   console.log("Elements:", title.nextElementSibling.children.length);
+// });
+
+// const button = document.querySelector(".change-color");
+// const colorSpan = document.querySelector(".color");
+
+// button.addEventListener("click", () => {
+//   const randomColor = getRandomHexColor();
+//   document.body.style.backgroundColor = randomColor;
+//   colorSpan.textContent = randomColor;
+// });
+
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215)
+//     .toString(16)
+//     .padStart(6, "0")}`;
+// }
+// // Функція, яка клікає на кнопку
+// function clickButton() {
+//   button.click();
+// }
+
+// // Встановлення інтервалу для виклику функції
+// setInterval(clickButton, 5000);
+
+// const container = document.querySelector(".js-container");
+// [...container.children].forEach((item) =>
+//   item.addEventListener("click", onClick)
+// );
+// function onClick(evt) {
+//   if(else)
+//   console.log(evt.currentTarget);
+// }
