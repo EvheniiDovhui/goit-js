@@ -1,4 +1,4 @@
-.title-color {
+/* .title-color {
   color: rgb(10, 179, 179);
 }
 ul {
@@ -6,14 +6,14 @@ ul {
 }
 .img {
   width: 300px;
-}
+} */
 /* .container {
   width: 200px;
   height: 200px;
   background-color: rgb(170, 170, 177);
   border-radius: 50%;
 } */
-.tog {
+/* .tog {
   display: none;
 }
 .favorite {
@@ -42,14 +42,14 @@ ul {
   padding: 8px 12px;
   font-size: 20px;
   cursor: pointer;
-}
-.container {
-  width: 300px;
+} */
+/* .container {
+  width: 500px;
   display: flex;
-  /* justify-content: space-between; */
+ justify-content: space-between;
   gap: 50px;
-}
-.box {
+} */
+/* .box {
   width: 50px;
   height: 50px;
 }
@@ -61,4 +61,35 @@ ul {
 }
 .item-black {
   background-color: rgb(26, 25, 25);
+}
+.item-blue {
+  background-color: rgb(10, 179, 179);
+}
+.item-yellow {
+  background-color: rgb(255, 255, 0);
+} */
+
+.container {
+  display: flex;
+  margin: 100px 50px 50px 50px;
+}
+.content {
+  width: 155px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+.item {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  display: inline-block;
+  font-size: 25px;
+  border: 1px solid black;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background 1s;
+}
+.item:hover {
+  background-color: rgb(10, 179, 179);
 }

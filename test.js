@@ -429,7 +429,7 @@
 //   button.click();
 // }
 
-// // Встановлення інтервалу для виклику функції
+// Встановлення інтервалу для виклику функції
 // setInterval(clickButton, 5000);
 
 // const container = document.querySelector(".js-container");
@@ -437,8 +437,19 @@
 //   item.addEventListener("click", onClick)
 // );
 // function onClick(evt) {
-//   if(else)
-//   console.log(evt.currentTarget);
+//   console.log(evt.currentTarget.dataset.color);
+//   console.log(evt);
+// }
+
+// const container = document.querySelector(".js-container");
+// container.addEventListener("click", onClick);
+// function onClick(evt) {
+//   //   console.log(evt.currentTarget.dataset.color);
+//   if (!evt.target.classList.contains("js-box")) {
+//     return;
+//   }
+//   //   console.log(evt.currentTarget);
+//   console.log(evt.target.dataset.color);
 // }
 
 /*
@@ -455,3 +466,67 @@
 //   document.getElementById("leftSwapInput").value = rightValue;
 //   document.getElementById("rightSwapInput").value = leftValue;
 // }
+
+const container = document.querySelector(".js-content");
+const wins = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [1, 4, 7],
+  [2, 5, 8],
+  [3, 6, 9],
+  [1, 5, 9],
+  [3, 5, 7],
+];
+let player = "X";
+let historyX = [];
+let historyO = [];
+function createMarkup() {
+  let markup = "";
+
+  for (let i = 1; i < 10; i += 1) {
+    markup += `<div class="item js-item" data-id="${i}"></div>`;
+  }
+  container.innerHTML = markup;
+}
+createMarkup();
+container.addEventListener("click", onClick);
+
+function onClick(evt) {
+  const { target } = evt;
+  if (!target.classList.contains("js-item") || target.textContent) {
+    return;
+  }
+
+  const id = Number(target.dataset.id);
+  let result = false;
+  if (player === "X") {
+    historyX.push(id);
+    result = checkWin(historyX);
+  } else {
+    historyO.push(id);
+    result = checkWin(historyO);
+  }
+  target.textContent = player;
+  if (result) {
+    console.log(`Winner ${player} 😎`);
+    resetGame();
+    return;
+  } else if (historyX.length + historyO.length === 9) {
+    console.log(`Draw 😕`);
+    resetGame();
+    return;
+  }
+
+  player = player === "X" ? "O" : "X";
+}
+
+function checkWin(arr) {
+  return wins.some((item) => item.every((id) => arr.includes(id)));
+}
+function resetGame() {
+  createMarkup();
+  historyX = [];
+  historyY = [];
+  player = "X";
+}
