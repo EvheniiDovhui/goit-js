@@ -440,3 +440,18 @@
 //   if(else)
 //   console.log(evt.currentTarget);
 // }
+
+/*
+Завдання 2
+Після натискання кнопки "SWAP ME" здійснюється обмін вмістом між двома інпутами.
+Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
+*/
+// function swapValues() {
+//   // Отримати значення лівого та правого інпутів
+//   const leftValue = document.getElementById("leftSwapInput").value;
+//   const rightValue = document.getElementById("rightSwapInput").value;
+
+//   // Обміняти значення
+//   document.getElementById("leftSwapInput").value = rightValue;
+//   document.getElementById("rightSwapInput").value = leftValue;
+// }
