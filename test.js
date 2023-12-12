@@ -467,66 +467,93 @@
 //   document.getElementById("rightSwapInput").value = leftValue;
 // }
 
-const container = document.querySelector(".js-content");
-const wins = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-  [1, 4, 7],
-  [2, 5, 8],
-  [3, 6, 9],
-  [1, 5, 9],
-  [3, 5, 7],
-];
-let player = "X";
-let historyX = [];
-let historyO = [];
-function createMarkup() {
-  let markup = "";
+// const container = document.querySelector(".js-content");
+// const wins = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+//   [1, 4, 7],
+//   [2, 5, 8],
+//   [3, 6, 9],
+//   [1, 5, 9],
+//   [3, 5, 7],
+// ];
+// let player = "X";
+// let historyX = [];
+// let historyO = [];
+// function createMarkup() {
+//   let markup = "";
 
-  for (let i = 1; i < 10; i += 1) {
-    markup += `<div class="item js-item" data-id="${i}"></div>`;
-  }
-  container.innerHTML = markup;
-}
-createMarkup();
-container.addEventListener("click", onClick);
+//   for (let i = 1; i < 10; i += 1) {
+//     markup += `<div class="item js-item" data-id="${i}"></div>`;
+//   }
+//   container.innerHTML = markup;
+// }
+// createMarkup();
+// container.addEventListener("click", onClick);
 
-function onClick(evt) {
-  const { target } = evt;
-  if (!target.classList.contains("js-item") || target.textContent) {
-    return;
-  }
+// function onClick(evt) {
+//   const { target } = evt;
+//   if (!target.classList.contains("js-item") || target.textContent) {
+//     return;
+//   }
 
-  const id = Number(target.dataset.id);
-  let result = false;
-  if (player === "X") {
-    historyX.push(id);
-    result = checkWin(historyX);
-  } else {
-    historyO.push(id);
-    result = checkWin(historyO);
-  }
-  target.textContent = player;
-  if (result) {
-    console.log(`Winner ${player} 😎`);
-    resetGame();
-    return;
-  } else if (historyX.length + historyO.length === 9) {
-    console.log(`Draw 😕`);
-    resetGame();
-    return;
-  }
+//   const id = Number(target.dataset.id);
+//   let result = false;
+//   if (player === "X") {
+//     historyX.push(id);
+//     result = checkWin(historyX);
+//   } else {
+//     historyO.push(id);
+//     result = checkWin(historyO);
+//   }
+//   target.textContent = player;
+//   if (result) {
+//     console.log(`Winner ${player} 😎`);
+//     resetGame();
+//     return;
+//   } else if (historyX.length + historyO.length === 9) {
+//     console.log(`Draw 😕`);
+//     resetGame();
+//     return;
+//   }
 
-  player = player === "X" ? "O" : "X";
-}
+//   player = player === "X" ? "O" : "X";
+// }
 
-function checkWin(arr) {
-  return wins.some((item) => item.every((id) => arr.includes(id)));
-}
-function resetGame() {
-  createMarkup();
-  historyX = [];
-  historyY = [];
-  player = "X";
-}
+// function checkWin(arr) {
+//   return wins.some((item) => item.every((id) => arr.includes(id)));
+// }
+// function resetGame() {
+//   createMarkup();
+//   historyX = [];
+//   historyY = [];
+//   player = "X";
+// }
+// setTimeout(() => console.log("A"), 2000);
+// console.log("B");
+// setTimeout(() => console.log("C"), 1500);
+// console.log("D");
+
+// console.log("A");
+// setTimeout(() => console.log("B"), 0);
+// console.log("C");
+
+// const timerId = setInterval(() => {
+//   console.log("Tick");
+// }, 2000);
+// setTimeout(() => {
+//   crearInterval(timerId);
+// }, 5000);
+
+// for (let i = 3; i > 0; i--) {
+//   const delay = i * 1000;
+//   setTimeout(() => console.log(i), delay);
+// }
+// const start = new Date("2030-04-23");
+// const end = new Date("2030-07-17");
+// console.log(end - start);
+
+const timerId = setTimeout(() => {
+  console.log("ok");
+}, 3000);
