@@ -554,6 +554,40 @@
 // const end = new Date("2030-07-17");
 // console.log(end - start);
 
-const timerId = setTimeout(() => {
-  console.log("ok");
-}, 3000);
+// const timerId = setTimeout(
+//   (name) => {
+//     console.log(name);
+//   },
+//   1000,
+//   "Natali"
+// );
+
+// clearTimeout(timerId);
+
+// const id = setInterval(
+//   (user, name) => {
+//     console.log(user, name);
+//   },
+//   1000,
+//   "Natali",
+//   "Alice"
+// );
+// const container = document.querySelector(".js-content");
+// const text = document.querySelector(".js-text");
+// let count = 10;
+// text.textContent = "Продам гараж!";
+// // text.textContent = `Залишилося ${count} секунд`;
+
+// const id = setInterval(() => {
+//   count -= 1;
+//   text.textContent = "Продам гараж!";
+//   console.log(`Залишилося ${count} секунд`);
+// }, 1000);
+
+// setTimeout(() => {
+//   clearInterval(id);
+//   container.style.display = "none";
+// }, 1000 * count);
+// console.log("A");
+// console.log("B");
+// console.log("C");
